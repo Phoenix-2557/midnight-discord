@@ -1,5 +1,5 @@
 body {
-    --dms-icon-svg-url: url('https://github.com/Phoenix-2557/midnight-discord/blob/7564dc9150655193ce705cff33696ad63bf81578/assets/Star.svg'); /* icon svg url. MUST BE A SVG. */
+    --dms-icon-svg-url: url('https://raw.githubusercontent.com/Phoenix-2557/midnight-discord/blob/7564dc9150655193ce705cff33696ad63bf81578/assets/Star.svg'); /* icon svg url. MUST BE A SVG. */
     --dms-icon-svg-size: 90%; /* size of the svg (css mask-size property) */
     --dms-icon-color-before: var(--icon-subtle); /* normal icon color */
     --dms-icon-color-after: var(--white); /* icon color when button is hovered/selected */
