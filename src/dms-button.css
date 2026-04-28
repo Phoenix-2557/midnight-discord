@@ -1,3 +1,4 @@
+
 /* ========================= */
 /* TRON DM ICON SYSTEM      */
 /* ========================= */
@@ -5,9 +6,10 @@
 body {
     --custom-dms-icon: custom;
 
-    --dms-icon-svg-url: url("https://raw.githubusercontent.com/Phoenix-2557/midnight-discord/7564dc9150655193ce705cff33696ad63bf81578/assets/Star.svg");
+    /* FIXED: stable Font Awesome SVG (mask-safe) */
+    --dms-icon-svg-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='white' d='M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z'/%3E%3C/svg%3E");
 
-    /* IMPORTANT: Chromium-safe mask sizing */
+    /* REQUIRED for Chromium mask stability */
     --dms-icon-svg-size: 100% 100%;
 
     --dms-icon-color-before: var(--icon-subtle);
@@ -60,7 +62,6 @@ body {
     -webkit-mask-position: center;
     mask-position: center;
 
-    /* FIX: do NOT use "contain" in Discord/Electron */
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
 
