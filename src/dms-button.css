@@ -12,16 +12,16 @@ body {
     --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2));
 }
 
-/* ========================= */
-/* ICON MODE (FIXED VERSION) */
-/* ========================= */
+/* ===================================== */
+/* FUTURE-PROOF TARGET (NO CLASS DEPENDENCY) */
+/* ===================================== */
 
-.wrapper__6e9f8[data-list-item-id='guildsnav___home']
+.wrapper__6e9f8[data-list-item-id*="___home"]
 > .childWrapper__6e9f8 > svg {
     display: none;
 }
 
-.wrapper__6e9f8[data-list-item-id='guildsnav___home']
+.wrapper__6e9f8[data-list-item-id*="___home"]
 > .childWrapper__6e9f8::before {
     content: '';
     display: block;
@@ -29,14 +29,13 @@ body {
 
     width: 65%;
     height: 65%;
-
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     background: var(--dms-icon-color-before);
 
-    /* IMPORTANT: both mask types */
+    /* MASK (cross-browser safe) */
     mask-image: var(--dms-icon-svg-url);
     -webkit-mask-image: var(--dms-icon-svg-url);
 
@@ -44,47 +43,19 @@ body {
     -webkit-mask-size: var(--dms-icon-svg-size);
 
     mask-position: center;
-    mask-repeat: no-repeat;
-
     -webkit-mask-position: center;
+
+    mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
 
     transition: background-color 0.15s ease-out, transform 0.2s ease;
 }
 
-/* hover / selected state */
-.wrapper__6e9f8[data-list-item-id='guildsnav___home']:hover
+/* hover + selected */
+.wrapper__6e9f8[data-list-item-id*="___home"]:hover
 > .childWrapper__6e9f8::before,
-.wrapper__6e9f8[data-list-item-id='guildsnav___home'].selected__6e9f8
+.wrapper__6e9f8[data-list-item-id*="___home"].selected__6e9f8
 > .childWrapper__6e9f8::before {
     background: var(--dms-icon-color-after);
     transform: translate(-50%, -50%) rotate(-360deg) scale(0.85);
-}
-
-/* ========================= */
-/* BACKGROUND MODE (UNCHANGED) */
-/* ========================= */
-
-@property --custom-dms-background {
-    syntax: 'off | image | color';
-    inherits: false;
-    initial-value: off;
-}
-
-@container body style(--custom-dms-background: image) {
-    .wrapper__6e9f8[data-list-item-id='guildsnav___home']
-    > .childWrapper__6e9f8 {
-        background-image: var(--dms-background-image-url);
-        background-color: transparent !important;
-        background-size: var(--dms-background-image-size);
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-}
-
-@container body style(--custom-dms-background: color) {
-    .wrapper__6e9f8[data-list-item-id='guildsnav___home']
-    > .childWrapper__6e9f8 {
-        background: var(--dms-background-color);
-    }
 }
